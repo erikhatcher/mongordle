@@ -25,7 +25,7 @@ Then, as you play [Wordle](https://www.nytimes.com/games/wordle/index.html), run
 
 The output consists first of the constraints used on the `.find()` call to Atlas, for insight into how the guesses and associated match patterns are used to filter to the remaining possible solutions.  Following the constraint criteria is a list of all possible solutions remaining, followed by the count of them.
 
-The `word_guesser.rb` command-line syntax consists of up 6 `"<word guess> <pattern match to solution>"` parameters.  The match pattern must be 5 characters consisting, positionally in sync with the associated word guess:
+The `word_guesser.rb` command-line syntax consists of up to 6 `"<word guess> <pattern match to solution>"` parameters.  The match pattern must be 5 characters consisting of and positionally in sync with the associated word guess:
 
 * `x`: the letter is not in the solution in this position, and perhaps not anywhere in the solution (Wordle's grey box)
 * `~`: the letter is in the solution, but not in this position (Wordle's yellow box)
