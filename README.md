@@ -2,7 +2,7 @@
 
 Using MongoDB's Atlas with a collection of all of Wordle's possible answers, usefully indexed, the `word_guesser.rb` script provides possible solutions given word guesses and Wordle's response hints.
 
-To use this tool, first import `words.json` into MongoDB Atlas:
+To use this tool, first import `words.json` into [MongoDB Atlas](https://www.mongodb.com/docs/atlas/?utm_source=github&utm_medium=readme&contet=opensource_4_ever):
 
     mongoimport --uri "mongodb+srv://$ATLAS_USER:$ATLAS_PWD@$ATLAS_HOST/wordle" --collection words --file words.json --jsonArray --drop
 
