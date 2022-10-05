@@ -1,6 +1,6 @@
 require 'mongo'
 
-client = Mongo::Client.new("mongodb+srv://admin:mdbpassword123@cluster0.xm8ghbl.mongodb.net/wordle")
+client = Mongo::Client.new("mongodb+srv://admin:....@.....mongodb.net/wordle")
 collection = client[:words]
 
 def possible_matches(guesses_results)
