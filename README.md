@@ -2,15 +2,22 @@
 
 Using MongoDB's Atlas with a collection of all of Wordle's possible answers, usefully indexed, the `word_guesser.rb` script provides possible solutions given word guesses and Wordle's response hints.
 
+## Setup
 To use this tool, first import `words.json` into [MongoDB Atlas](https://www.mongodb.com/docs/atlas/?utm_source=github&utm_medium=readme&contet=opensource_4_ever):
 
-    mongoimport --uri "mongodb+srv://$ATLAS_USER:$ATLAS_PWD@$ATLAS_HOST/wordle" --collection words --file words.json --jsonArray --drop
+```bash
+mongoimport --uri "mongodb+srv://$ATLAS_USER:$ATLAS_PWD@$ATLAS_HOST/wordle" --collection words --file words.json --jsonArray --drop
+```
+
+If `mongoimport` isn't available on your system it can be downloaded as part of the [MongoDB Database Tools](https://www.mongodb.com/try/download/tools) package for your operating system.
+
+##
 
 Then, as you play [Wordle](https://www.nytimes.com/games/wordle/index.html), run `word_guesser.rb` providing each guessed word and the returned hints pattern.  Like this:
 
 ![](examples/guess1.png)
 
-    $ ruby word_guesser.rb "WORDY xx^xx"              
+    $ ruby word_guesser.rb "WORDY xx^xx"
     {"letters":{"$nin":["W","O","D","Y"],"$all":["R"]},"letter3":{"$eq":"R"}}
     AGREE
     BARGE

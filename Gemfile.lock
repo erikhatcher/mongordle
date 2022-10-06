@@ -7,9 +7,10 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-darwin-21
 
 DEPENDENCIES
   mongo
 
 BUNDLED WITH
-   2.3.7
+   2.3.20
