@@ -1,8 +1,18 @@
+#!/usr/bin/env ruby
+
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
 
-client = Mongo::Client.new("mongodb://localhost:27017/wordle")
+uri = ENV["MONGODB_URI"]
+if uri.nil?
+  puts "mongordle: the Wordle lover's best friend"
+  puts "usage:"
+  puts "\tMONGODB_URI=mongodb+srv://..../wordle ruby word_guesser.rb \"WORDY xx^xx\""
+  exit 0
+end
+
+client = Mongo::Client.new(uri)
 collection = client[:words]
 
 def possible_matches(guesses_results)
